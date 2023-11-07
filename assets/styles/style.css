@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script&family=Roboto:wght@500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas: "header" "aside" "main" "footer";
+  grid-template-rows: 100px 100px 1fr 100px;
+  font-family: roboto, sans-serif;
+}
+
+header {
+  grid-area: header;
+  background-color: #FFAB40;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+header nav .brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: black;
+}
+header nav .brand h1 {
+  font-size: 18px;
+  font-weight: 600px;
+}
+header nav .brand figure img {
+  border-radius: 20%;
+  width: 70px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+header nav .icon i {
+  color: #2c2b2b;
+  font-size: 30px;
+}
+header nav .menu {
+  display: none;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #E69138;
+  color: #38383a;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-around;
+  align-items: center;
+}
+aside form.buscador input[type=text] {
+  padding: 8px;
+  font-size: 12px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+aside form.buscador button {
+  float: left;
+  width: 20%;
+  background: #2196F3;
+  color: white;
+  font-size: 24px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+aside form.buscador button:hover {
+  background: #0d70c2;
+}
+aside form.buscador::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+aside .iconos i {
+  font-size: 25px;
+  margin: 0 10px 0 10px;
+}
+aside .iconos i:hover {
+  font-size: 30px;
+  color: #ffffff;
+}
+aside .textos_iconos {
+  display: none;
+}
+
+main {
+  grid-area: main;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-areas: "auto";
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 320px;
+  gap: 10px;
+  margin-bottom: 10px;
+  border: solid 1px rgb(199, 201, 202);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0.7;
+}
+
+.producto:hover {
+  opacity: 1;
+  border: solid 2px rgb(164, 165, 165);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ffbd83;
+}
+
+img {
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.item-nombre {
+  height: 50px;
+  text-align: center;
+}
+
+.producto button {
+  display: flex;
+  width: 80px;
+  height: 30px;
+  color: #d2d2d4;
+  border: none;
+  background-color: #2196F3;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: background-color 1s ease-out;
+}
+
+button:hover {
+  background-color: #0c497c;
+  color: #f2f2f5;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 10px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  transition: background-color 1s ease-out;
+}
+
+a:hover {
+  background-color: #0c497c;
+  color: #f2f2f5;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #FFAB40;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+footer .iconos i {
+  font-size: 20px;
+  margin: 0px 10px 10px 10px;
+}
+footer .iconos i:hover {
+  color: #2a6a9e;
+}
+
+@media (min-width: 576px) {
+  .dashboard {
+    grid-template-areas: "header header header header header" "aside main main main main" "footer footer footer footer footer";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 250px;
+  }
+  header nav .brand figure {
+    width: 50px;
+  }
+  header nav .menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    color: #292926;
+  }
+  header nav .menu li:hover {
+    color: #0d70c2;
+    font-weight: bold;
+    transform: scale(1.2);
+  }
+  header nav .icon {
+    display: none;
+  }
+  aside {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+  aside .iconos {
+    display: none;
+  }
+  aside .textos_iconos {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 20px;
+    font-size: 12px;
+    gap: 20px;
+    color: rgb(39, 39, 39);
+  }
+  aside .textos_iconos li:hover {
+    font-size: 15px;
+    color: black;
+  }
+  main .cards {
+    display: grid;
+    grid-template-areas: "auto auto";
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .dashboard {
+    grid-template-areas: "header aside aside aside aside" "header main main main main" "footer footer footer footer footer";
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 280px;
+  }
+  .dashboard header {
+    height: 100%;
+  }
+  .dashboard header nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+  .dashboard header nav .brand figure {
+    width: 40px;
+  }
+  .dashboard header nav .icon {
+    display: none;
+  }
+  .dashboard header nav .menu {
+    flex-direction: column;
+    text-align: center;
+    color: #29292b;
+  }
+  aside {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  aside .buscador {
+    width: 50%;
+    padding-left: 10px;
+  }
+  aside .textos_iconos {
+    flex-direction: row;
+    text-align: center;
+    list-style: none;
+    gap: 20px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+  }
+  aside i {
+    font-size: 15px;
+  }
+  aside i:hover {
+    font-size: 20px;
+  }
+  main .cards {
+    display: grid;
+    grid-template-areas: "auto auto auto auto";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+  footer {
+    background-color: #E69138;
+  }
+}/*# sourceMappingURL=style.css.map */
